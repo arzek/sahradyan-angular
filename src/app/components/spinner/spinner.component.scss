@@ -1,0 +1,29 @@
+// imports
+
+.abm-spinner {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  &-overlay {
+    background-color: transparentize(lighten(gray, 30%), .5);
+  }
+
+  &-icon {
+    z-index: 10000;
+    position: relative;
+    color: gray;;
+  }
+
+}
+
+.abm-spinner, .abm-spinner-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}

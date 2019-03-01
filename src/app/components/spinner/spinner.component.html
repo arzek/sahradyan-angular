@@ -1,0 +1,8 @@
+<aside *ngIf="showSpinner$ | async"
+  class="abm-spinner"
+  [ngStyle]="{'position': mode}">
+  <div class="abm-spinner-overlay uk-animation-fade "
+    [ngStyle]="{'position': mode}"></div>
+  <div class="abm-spinner-icon uk-animation-fade uk-animation-fast"
+    [attr.uk-spinner]="'ratio:' + ratio"></div>
+</aside>

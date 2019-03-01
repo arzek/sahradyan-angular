@@ -4,13 +4,15 @@ import { GetAllTodosAction, SetItemAction, AddTodoAction, DeleteTodoAction } fro
 import { TodoService } from '../services/todo.service';
 
 export class AppStateModel {
-  public todos: Todo[];
+  todos: Todo[];
+  showSpinner: boolean;
 }
 
 @State<AppStateModel>({
   name: 'app',
   defaults: {
-    todos: []
+    todos: [],
+    showSpinner: false
   }
 })
 export class AppState {

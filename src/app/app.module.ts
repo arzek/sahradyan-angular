@@ -12,13 +12,15 @@ import { environment } from 'src/environments/environment';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoFormComponent,
     TodoListComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
