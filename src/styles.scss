@@ -6,3 +6,22 @@
 @import "node_modules/uikit/src/scss/uikit-theme";
 
 // uikit end
+
+// use with flex to center content on screen
+
+.app-main {
+  min-height: 100vh;
+  background: #1e87f0;
+}
+
+// use to check todo item
+
+.app-line-through {
+  text-decoration: line-through !important;
+}
+
+// cursor pointer
+
+.app-cursor-pointer {
+  cursor: pointer;
+}
