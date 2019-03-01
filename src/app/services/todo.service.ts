@@ -12,7 +12,7 @@ export class TodoService {
   constructor(private http: HttpService) { }
 
   getAll(): Promise<Todo[]> {
-    return this.http.get(this.path);
+    return this.http.get(this.path).then(res => res.todos);
   }
 
   add(todo: Todo): Promise<Todo> {
@@ -23,7 +23,7 @@ export class TodoService {
     return this.http.put(`${this.path}/${todo.id}`, todo);
   }
 
-  delete(todo: Todo): Promise<Todo> {
+  delete(todo: Todo): Promise<object> {
     return this.http.delete(`${this.path}/${todo.id}`);
   }
 }

@@ -1,8 +1,8 @@
 export class Todo {
+  id: number;
   constructor(
-    public id: number,
     public title: string,
-    public completed: boolean,
-    public archived: boolean
+    public completed: boolean = false,
+    public archived: boolean = false
   ) { }
 }
