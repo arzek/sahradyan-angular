@@ -7,10 +7,16 @@ import { AppState } from './state/app.state';
 
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { environment } from 'src/environments/environment';
+import { TodoFormComponent } from './components/todo-form/todo-form.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoItemComponent } from './components/todo-item/todo-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoFormComponent,
+    TodoListComponent,
+    TodoItemComponent
   ],
   imports: [
     BrowserModule,
