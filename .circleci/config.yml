@@ -19,9 +19,9 @@ jobs:
       - run:
           name: Run unit test
           command: npm run test -- --no-watch --no-progress
-      - run:
-          name: Run e2e test
-          command: npm run e2e
+      # - run:
+      #     name: Run e2e test
+      #     command: npm run e2e
       - run:
           name: Build
           command: npm run build --prod
