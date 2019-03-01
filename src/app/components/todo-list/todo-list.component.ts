@@ -6,13 +6,6 @@ import { Todo } from 'src/app/todo.model';
   selector: 'tbody[app-todo-list]',
   templateUrl: './todo-list.component.html'
 })
-export class TodoListComponent implements OnInit {
-
+export class TodoListComponent {
   @Input() items: Todo[] = [];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
