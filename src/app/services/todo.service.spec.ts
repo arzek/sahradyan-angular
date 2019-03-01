@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment';
 import { TodoService } from './todo.service';
 
 import * as faker from 'faker';
+import { NgxsModule } from '@ngxs/store';
+import { AppState } from '../state/app.state';
 
 describe('TodoService', () => {
   let service: TodoService;
@@ -13,7 +15,10 @@ describe('TodoService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        NgxsModule.forRoot([
+          AppState
+        ])
       ],
       providers: [
         TodoService
@@ -47,9 +52,7 @@ describe('TodoService', () => {
     });
 
     const request = httpMock.expectOne(`${environment.api}/todos`);
-    request.flush({
-      todos: todosMoc
-    });
+    request.flush(todosMoc);
     httpMock.verify();
   });
 
