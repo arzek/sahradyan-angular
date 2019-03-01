@@ -20,6 +20,11 @@ export class AppState {
   constructor(private todoService: TodoService) { }
 
   @Selector()
+  static all(state: AppStateModel) {
+    return state.todos;
+  }
+
+  @Selector()
   static pending(state: AppStateModel) {
     return state.todos.filter(todo => todo.completed === false && todo.archived === false);
   }

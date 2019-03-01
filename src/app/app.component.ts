@@ -11,6 +11,7 @@ import { Todo } from './todo.model';
 })
 export class AppComponent implements OnInit {
 
+  @Select(AppState.all) all$: Observable<Todo[]>;
   @Select(AppState.pending) pending$: Observable<Todo[]>;
   @Select(AppState.completed) completed$: Observable<Todo[]>;
   @Select(AppState.archived) archived$: Observable<Todo[]>;

@@ -6,12 +6,24 @@ describe('workspace-project App', () => {
 
   beforeEach(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
-  // it('should display welcome message', () => {
-  //   page.navigateTo();
-  //   expect(page.getTitleText()).toEqual('Welcome to sahradyan-angular!');
-  // });
+  it('Add Todo', () => {
+
+  });
+
+  it('Delete Todo', () => {
+
+  });
+
+  it('Completed todo', () => {
+
+  });
+
+  it('Archived todo', () => {
+
+  });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

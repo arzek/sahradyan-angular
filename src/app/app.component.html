@@ -25,6 +25,12 @@
               <table class="uk-table uk-table-small uk-table-divider uk-table-justify uk-table-middle">
                 <caption app-todo-form></caption>
                 <tbody app-todo-list
+                  [items]="all$ | async"></tbody>
+              </table>
+            </li>
+            <li>
+              <table class="uk-table uk-table-small uk-table-divider uk-table-justify uk-table-middle">
+                <tbody app-todo-list
                   [items]="pending$ | async"></tbody>
               </table>
             </li>
@@ -45,6 +51,7 @@
         <div class="uk-card-footer uk-flex-middle">
           <ul class="uk-subnav uk-subnav-pill uk-flex-center"
             uk-switcher="connect: .app-switcher">
+            <li><a href="#">All</a></li>
             <li><a href="#">Pending</a></li>
             <li><a href="#">Completed</a></li>
             <li><a href="#">Archived</a></li>
