@@ -12,11 +12,16 @@
     readonly />
 </td>
 <td class="uk-text-right">
-  <span class="uk-text-muted app-cursor-pointer uk-margin-small-right"
-    [ngClass]="{'uk-text-success': item.archived}"
-    [attr.uk-icon]="icon"
-    (click)="archived()"></span>
-  <span class="uk-text-danger app-cursor-pointer"
-    uk-icon="icon: close"
-    (click)="delete()"></span>
+  <a class="app-todo-archived">
+    <span class="uk-text-muted app-cursor-pointer uk-margin-small-right"
+      [ngClass]="{'uk-text-success': item.archived}"
+      [attr.uk-icon]="icon"
+      (click)="archived()"></span>
+  </a>
+  <a class="app-todo-close">
+    <span class="uk-text-danger app-cursor-pointer"
+      uk-icon="icon: close"
+      (click)="delete()">
+    </span>
+  </a>
 </td>

@@ -3,9 +3,11 @@
     <form (submit)="handleAdd($event);"
       ngNativeValidate>
       <button class="uk-form-icon uk-form-icon-flip uk-text-primary"
+        id="app-btn-add"
         uk-icon="icon: plus-circle"
         type="submit"></button>
       <input class="uk-input uk-form-width-1-1"
+        id="app-input-add"
         [(ngModel)]="newTodo"
         name="newTodo"
         type="text"

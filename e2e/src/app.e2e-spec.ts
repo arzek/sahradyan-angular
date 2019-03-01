@@ -1,6 +1,8 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
+import * as faker from 'faker';
+
 describe('workspace-project App', () => {
   let page: AppPage;
 
@@ -9,20 +11,42 @@ describe('workspace-project App', () => {
     page.navigateTo();
   });
 
-  it('Add Todo', () => {
-
+  it('Add Todo', async () => {
+    browser.sleep(1000);
+    const title = faker.name.firstName();
+    await page.addTodo(title);
+    browser.sleep(1000);
+    await page.deleteFirstTodo();
+    browser.sleep(1000);
   });
 
-  it('Delete Todo', () => {
-
+  it('Delete Todo', async () => {
+    browser.sleep(1000);
+    const title = faker.name.firstName();
+    await page.addTodo(title);
+    browser.sleep(1000);
+    await page.deleteFirstTodo();
+    browser.sleep(1000);
   });
 
-  it('Completed todo', () => {
-
+  it('Completed todo', async () => {
+    browser.sleep(1000);
+    const title = faker.name.firstName();
+    await page.addTodo(title);
+    browser.sleep(1000);
+    await page.deleteFirstTodo();
+    browser.sleep(1000);
   });
 
-  it('Archived todo', () => {
-
+  it('Archived todo', async () => {
+    browser.sleep(1000);
+    const title = faker.name.firstName();
+    await page.addTodo(title);
+    browser.sleep(1000);
+    await page.archivedFirstTodo();
+    browser.sleep(1000);
+    await page.deleteFirstTodo();
+    browser.sleep(1000);
   });
 
   afterEach(async () => {
