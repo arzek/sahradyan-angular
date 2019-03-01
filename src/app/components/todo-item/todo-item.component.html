@@ -1,7 +1,8 @@
 <td class="uk-table-shrink">
   <input class="uk-checkbox"
     type="checkbox"
-    [checked]="item.completed" />
+    [checked]="item.completed"
+    (change)="completed()" />
 </td>
 <td class="uk-table-expand">
   <input class="uk-input uk-form-blank uk-form-width-1-1 app-line-through"
@@ -13,7 +14,8 @@
 <td class="uk-text-right">
   <span class="uk-text-muted app-cursor-pointer uk-margin-small-right"
     [ngClass]="{'uk-text-success': item.archived}"
-    [attr.uk-icon]="icon"></span>
+    [attr.uk-icon]="icon"
+    (click)="archived()"></span>
   <span class="uk-text-danger app-cursor-pointer"
     uk-icon="icon: close"
     (click)="delete()"></span>

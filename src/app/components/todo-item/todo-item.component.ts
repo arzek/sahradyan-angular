@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Todo } from 'src/app/todo.model';
 import { Store } from '@ngxs/store';
-import { DeleteTodoAction } from 'src/app/state/app.actions';
+import { DeleteTodoAction, EditTodoAction } from 'src/app/state/app.actions';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -16,6 +16,16 @@ export class TodoItemComponent {
 
   delete() {
     this.store.dispatch(new DeleteTodoAction(this.item));
+  }
+
+  completed() {
+    this.item.completed = !this.item.completed;
+    this.store.dispatch(new EditTodoAction(this.item));
+  }
+
+  archived() {
+    this.item.archived = !this.item.archived;
+    this.store.dispatch(new EditTodoAction(this.item));
   }
 
   get icon(): string {

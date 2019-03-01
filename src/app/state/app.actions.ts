@@ -19,3 +19,8 @@ export class DeleteTodoAction {
   static readonly type = '[App] Delete todo';
   constructor(public payload: Todo) { }
 }
+
+export class EditTodoAction {
+  static readonly type = '[App] Edit todo';
+  constructor(public payload: Todo) { }
+}

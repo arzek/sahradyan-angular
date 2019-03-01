@@ -1,6 +1,6 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { Todo } from '../todo.model';
-import { GetAllTodosAction, SetItemAction, AddTodoAction, DeleteTodoAction } from './app.actions';
+import { GetAllTodosAction, SetItemAction, AddTodoAction, DeleteTodoAction, EditTodoAction } from './app.actions';
 import { TodoService } from '../services/todo.service';
 
 export class AppStateModel {
@@ -26,7 +26,7 @@ export class AppState {
 
   @Selector()
   static completed(state: AppStateModel) {
-    return state.todos.filter(todo => todo.completed === true);
+    return state.todos.filter(todo => todo.completed === true && todo.archived === false);
   }
 
   @Selector()
@@ -60,6 +60,13 @@ export class AppState {
   @Action(DeleteTodoAction)
   deleteTodo({ dispatch }: StateContext<AppStateModel>, action: DeleteTodoAction) {
     this.todoService.delete(action.payload).then(todo => {
+      dispatch(new GetAllTodosAction());
+    });
+  }
+
+  @Action(EditTodoAction)
+  editTodo({ dispatch }: StateContext<AppStateModel>, action: EditTodoAction) {
+    this.todoService.edit(action.payload).then(todo => {
       dispatch(new GetAllTodosAction());
     });
   }
