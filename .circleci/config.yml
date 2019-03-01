@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/sahradyan-angular
+    docker:
+      - image: circleci/node:8-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: yarn
+      - save_cache:
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
+      - save_cache:
+          key: my-project-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+      - run:
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Run unit test
+          command: npm run test -- --no-watch --no-progress
+      - run:
+          name: Run e2e test
+          command: npm run e2e --port=5000
+      - run:
+          name: Build
+          command: npm run build --prod
+      - run:
+          name: Deploy
+          command: node ./node_modules/firebase-tools/lib/bin/firebase.js deploy --project=$FIREBASE_PROJECT --token=$FIREBASE_TOKEN
+
