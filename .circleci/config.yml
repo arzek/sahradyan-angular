@@ -7,10 +7,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: my-project-{{ .Branch }}-{{ checksum "yarn.json" }}
       - run: yarn
       - save_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: my-project-{{ .Branch }}-{{ checksum "yarn.json" }}
           paths:
             - "node_modules"
       - save_cache:
