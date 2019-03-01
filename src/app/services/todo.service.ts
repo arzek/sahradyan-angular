@@ -12,7 +12,7 @@ export class TodoService {
   constructor(private http: HttpService) { }
 
   getAll(): Promise<Todo[]> {
-    return this.http.get(this.path).then(res => res.todos);
+    return this.http.get(this.path);
   }
 
   add(todo: Todo): Promise<Todo> {

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NgxsModule } from '@ngxs/store';
@@ -22,6 +23,7 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     NgxsModule.forRoot([
       AppState
     ]),

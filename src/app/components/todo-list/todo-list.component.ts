@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Todo } from 'src/app/todo.model';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './todo-list.component.html'
 })
 export class TodoListComponent implements OnInit {
+
+  @Input() items: Todo[] = [];
 
   constructor() { }
 

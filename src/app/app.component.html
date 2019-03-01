@@ -1,6 +1,6 @@
 <main>
   <section class="app-main uk-flex uk-flex-wrap uk-flex-center uk-flex-middle">
-    <div class="uk-width-1-3@m">
+    <div class="uk-width-1-3@l uk-width-1-2">
       <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-padding-remove">
         <div class="uk-card-header">
           <div class="uk-grid-small uk-flex-middle"
@@ -24,17 +24,20 @@
             <li>
               <table class="uk-table uk-table-small uk-table-divider uk-table-justify uk-table-middle">
                 <caption app-todo-form></caption>
-                <tbody app-todo-list></tbody>
+                <tbody app-todo-list
+                  [items]="pending$ | async"></tbody>
               </table>
             </li>
             <li>
               <table class="uk-table uk-table-small uk-table-divider uk-table-justify uk-table-middle">
-                <tbody app-todo-list></tbody>
+                <tbody app-todo-list
+                  [items]="completed$ | async"></tbody>
               </table>
             </li>
             <li>
               <table class="uk-table uk-table-small uk-table-divider uk-table-justify uk-table-middle">
-                <tbody app-todo-list></tbody>
+                <tbody app-todo-list
+                  [items]="archived$ | async"></tbody>
               </table>
             </li>
           </ul>

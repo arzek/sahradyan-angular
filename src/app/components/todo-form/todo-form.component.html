@@ -1,9 +1,16 @@
 <div class="uk-margin">
   <div class="uk-inline uk-width-1-1">
-    <a class="uk-form-icon uk-form-icon-flip uk-text-primary"
-      uk-icon="icon: plus-circle"></a>
-    <input class="uk-input uk-form-width-1-1"
-      type="text"
-      placeholder="Type here ..." />
+    <form (submit)="handleAdd($event);"
+      ngNativeValidate>
+      <button class="uk-form-icon uk-form-icon-flip uk-text-primary"
+        uk-icon="icon: plus-circle"
+        type="submit"></button>
+      <input class="uk-input uk-form-width-1-1"
+        [(ngModel)]="newTodo"
+        name="newTodo"
+        type="text"
+        required
+        placeholder="Type here ..." />
+    </form>
   </div>
 </div>
